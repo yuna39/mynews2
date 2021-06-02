@@ -1,9 +1,9 @@
 <!--layouts/admin.blade. phpを読み込む-->
 
-@extends('layouts/admin')
+@extends('layouts.admin')
 
 
-<!--admin.blade.phpの@yield（'title')にニュースの新規作成を埋め込む-->
+<!--admin.blade.php（'title')にニュースの新規作成を埋め込む-->
 
 @section('title', 'ニュースの新規作成')
 
