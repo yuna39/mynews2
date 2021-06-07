@@ -2,7 +2,7 @@
 
 return [
     'Login' => 'ログイン',
-    'E-Mail Adress' => 'メールアドレス',
+    'E-Mail Address' => 'メールアドレス',
     'Password' => 'パスワード',
-    'Remember' => 'ログイン情報を記憶する',
+    'Remember Me' => 'ログイン情報を記憶する',
     ];
