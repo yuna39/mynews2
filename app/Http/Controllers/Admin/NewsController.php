@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\News;
+
 class NewsController extends Controller
 {
     //
@@ -22,12 +24,12 @@ class NewsController extends Controller
         $form = $request->all();
         
         // フォームから画像が送信されてきたら保存して$news->image_pathに画像のパスを保存する
-        if (isseet($form['image'])){
+         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
-            $news->image_path =　basename($path);
-        }else{
-            $news->image_path = null;
-        }
+            $news->image_path = basename($path);
+            } else {
+          $news->image_path = null;
+      }
         
         // フォームから送られてきた_tokenを削除する
         unset($form['_token']);
