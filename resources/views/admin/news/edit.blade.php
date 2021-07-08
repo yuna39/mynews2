@@ -15,7 +15,48 @@
                         </ul>
                     @endif
                     
+                    <!--タイトル-->
+                    <div class="form-group row">
+                        <label class="col-md-2" for="title">タイトル</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="title" value="{{ $news_form->title }}">
+                        </div>
+                    </div>
+                    
+                    <!--本文-->
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">本文</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="20">{{ $news_form->body }}</textarea>
+                        </div>
+                    </div>
+                    
+                    <!--画像-->
+                    <div class="form-group row">
+                        <label class="col-md-2" for="image">画像</label>
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image">
+                            <div class="form-text text-info">
+                                設定中: {{ $news_form->image_path }}
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--更新ボタン-->
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <input type="hidden" name="id" value="{{ $news_form->id }}">
+                            {{ csrf_field() }}
+                            <input type="submit" class="btn btn-primary" value="更新">
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+@endsection
