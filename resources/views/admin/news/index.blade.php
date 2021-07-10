@@ -13,8 +13,8 @@
             <div class="col-md-8">
                 <form action="{{ action('Admin\NewsController@index') }}" method="get">
                     <div class="form-group row">
-                        <label class="col-md-2">タイトル</label>
-                        <div class="col-md-8">
+                        <label class="col-md-3">タイトル</label>
+                        <div class="col-md-7">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                         </div>
                         <div class="col-md-2">
@@ -42,6 +42,16 @@
                                     <th>{{ $news->id }}</th>
                                     <td>{{ \Str::limit($news->title, 100) }}</td>
                                     <td>{{ \Str::limit($news->body, 250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\NewsController@edit', ['id' => $news->id]) }}">編集</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\NewsController@delete', ['id' => $news->id]) }}">削除</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
